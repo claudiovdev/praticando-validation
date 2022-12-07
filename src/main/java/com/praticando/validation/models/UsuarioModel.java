@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode
 @Table(name = "TB_USUARIOS")
 @Entity
-public class UsuarioModel {
+public class UsuarioModel<Estado> {
 
     @EqualsAndHashCode.Exclude
     @Id
@@ -31,6 +31,9 @@ public class UsuarioModel {
 
     @Embedded
     private Endereco endereco;
+
+    @ManyToOne
+    private EstadoModel estado;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
     private LocalDateTime dataDeCriacao;
