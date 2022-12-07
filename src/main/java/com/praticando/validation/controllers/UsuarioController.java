@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("usuarios")
 public class UsuarioController {
@@ -17,7 +19,7 @@ public class UsuarioController {
     UsuarioService usuarioService;
 
     @PostMapping
-    public UsuarioModel cadastrarUsuario(@RequestBody UsuarioDto usuario){
+    public UsuarioModel cadastrarUsuario(@RequestBody @Valid UsuarioDto usuario){
         UsuarioModel usuarioModel = usuarioService.salvarUsuario(usuario);
         return usuarioModel;
     }

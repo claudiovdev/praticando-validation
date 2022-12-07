@@ -16,7 +16,7 @@ public class UsuarioMapperImpl implements UsuarioMapper {
     @Override
     public UsuarioModel convertToModel(UsuarioDto usuario) {
         UsuarioModel usuarioModel = new UsuarioModel();
-        BeanUtils.copyProperties(usuarioModel, usuario);
+        BeanUtils.copyProperties(usuario, usuarioModel);
         usuarioModel.setId(UUID.randomUUID().toString());
         usuarioModel.setStatus(Status.ATIVO);
         usuarioModel.setDataDeCriacao(LocalDateTime.now(ZoneId.of("UTC")));

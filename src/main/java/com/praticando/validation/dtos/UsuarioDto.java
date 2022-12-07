@@ -1,8 +1,11 @@
 package com.praticando.validation.dtos;
 
+import lombok.Data;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.PositiveOrZero;
 
+@Data
 public class UsuarioDto {
 
     @NotBlank
@@ -11,5 +14,6 @@ public class UsuarioDto {
     @PositiveOrZero
     private Integer idade;
 
+    private String cep;
 
 }
