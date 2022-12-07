@@ -8,9 +8,11 @@ import com.praticando.validation.repositories.UsuarioRepository;
 import com.praticando.validation.services.UsuarioService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
+@Service
 public class UsuarioServiceImpl implements UsuarioService {
 
     @Autowired

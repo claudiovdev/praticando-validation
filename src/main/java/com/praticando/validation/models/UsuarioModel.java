@@ -29,6 +29,9 @@ public class UsuarioModel {
     @Enumerated(EnumType.STRING)
     private Status status;
 
+    @Embedded
+    private Endereco endereco;
+
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
     private LocalDateTime dataDeCriacao;
 
